@@ -1,0 +1,38 @@
+#components-layout-demo-custom-trigger .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.antLayout {
+  height: calc(100% - 35px);
+}
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 10px auto;
+}
+.layoutContent {
+  height: calc(100% - 35px - 64px);
+  background-color: pink;
+  overflow-y: auto;
+}
+.footer {
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+}

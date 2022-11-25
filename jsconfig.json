@@ -1,0 +1,6 @@
+{
+  "extends": "./jsconfig.dev.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+  },
+}
