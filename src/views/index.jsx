@@ -4,7 +4,7 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd'
 import React, { useState } from 'react';
-import { useRoutes, useLocation } from 'react-router-dom';
+import { useRoutes, useNavigate } from 'react-router-dom';
 import router from '@/router';
 const { Header, Sider, Content, Footer } = Layout;
 import style from './index.module.scss';
@@ -14,15 +14,16 @@ const Appindex = () => {
   const defaultSelectedKeys = ['item-1'];
 
   const outlet = useRoutes(router);
-  const params = useLocation();
   const selectedKeys = useState([]);
+  const navigateTo = useNavigate();
 
   console.log(selectedKeys)
 
   // 点击导航菜单
-  const handleMenuClick = ({ item, key, keyPath, domEvent }) => {
-    console.log('handleMenuClick---', item, key, keyPath, domEvent)
+  const handleMenuClick = ({ key, keyPath }) => {
+    console.log('handleMenuClick---', key)
     selectedKeys[0] = keyPath;
+    navigateTo(key)
   }
 
   return (<>

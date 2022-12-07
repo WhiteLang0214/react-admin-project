@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Navigate } from "react-router-dom";
 import {
   UploadOutlined,
@@ -10,6 +10,11 @@ import {
 const Home = lazy(() => import('@/views/Home'));
 const About = lazy(() => import('@/views/About'));
 
+
+const commonRouteComponent = ( component ) => {
+  return <Suspense fallback={<div>loading</div>}>{component}</Suspense>
+}
+
 const routes = [
   {
     path: '/',
@@ -20,14 +25,14 @@ const routes = [
   },
   {
     path: '/home',
-    element: <Home />,
+    element: commonRouteComponent(<Home />),
     label: '首页', 
     key: 'home', 
     icon: <UploadOutlined />,
   },
   {
     path: '/about',
-    element: <About />,
+    element: commonRouteComponent(<About />),
     label: '关于我们', 
     key: 'about',
     icon: <UserOutlined />,
